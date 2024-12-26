@@ -11,6 +11,8 @@ public:
         std::string alertMessage = "Medical Alert: " + alertType + " at " + location;
         alerts.push_back(alertMessage);
         std::cout << alertMessage << std::endl;
+        // call the new function to email notification 
+        sendEmailNotification(alertMessage);
     }
 
     void viewAlerts() const {
@@ -22,6 +24,11 @@ public:
         for (const auto& alert : alerts) {
             std::cout << alert << std::endl;
         }
+}
+private:
+    void sendEmailNotification(const std::string& message) {
+        // This is a placeholder for email sending logic
+        std::cout << "Sending email notification: " << message << std::endl;
     }
 };
 
